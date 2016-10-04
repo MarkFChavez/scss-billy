@@ -26,18 +26,18 @@ class Jarvis
   private
 
   def modify_primary_var!
-    File.write(f = filename, File.read(f).gsub(/\$primary: .*/,"$primary: #{fetch_variables[:primary]};"))
+    File.write(f = filename, File.read(f).gsub(/\$primary: .*/,"$primary: #{fetch_variables![:primary]};"))
   end
 
   def modify_secondary_var!
-    File.write(f = filename, File.read(f).gsub(/\$secondary: .*/,"$secondary: #{fetch_variables[:secondary]};"))
+    File.write(f = filename, File.read(f).gsub(/\$secondary: .*/,"$secondary: #{fetch_variables![:secondary]};"))
   end
 
   def modify_tertiary_var!
-    File.write(f = filename, File.read(f).gsub(/\$tertiary: .*/,"$tertiary: #{fetch_variables[:tertiary]};"))
+    File.write(f = filename, File.read(f).gsub(/\$tertiary: .*/,"$tertiary: #{fetch_variables![:tertiary]};"))
   end
 
-  def fetch_variables
+  def fetch_variables!
     response = Net::HTTP.get_response(uri)
     result = JSON.parse(response.body).first
 
