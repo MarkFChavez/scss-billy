@@ -1,3 +1,3 @@
 Usage: 
 
-ruby sample.rb <email> <location-of-scss-file>
+ruby sample.rb "email" "location-of-scss-file"
