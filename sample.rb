@@ -3,7 +3,9 @@ require 'net/http'
 require 'uri'
 
 
-email = ARGV.empty? ? "billy.nicart@gmail.com" : ARGV.first
+email = ARGV[0] ? ARGV[0] : "billy.nicart@gmail.com"
+filename = ARGV[1] ? ARGV[1] : "styles/app.variables.scss"
+
 URL = "http://msme.herokuapp.com/api/v1/themes?email=#{email}"
 
 class Jarvis
@@ -54,7 +56,7 @@ class Jarvis
 end
 
 # START OP
-jarvis = Jarvis.new("app.variables.scss", URL)
+jarvis = Jarvis.new(filename, URL)
 jarvis.process
 puts "DONE"
 
