@@ -1,0 +1,19 @@
+@import "globals.core";
+
+$text-color: #009D92 !important;
+
+$primary: pink;
+$secondary: yellow;
+$tertiary: fuchsia;
+
+$colors: (
+  primary:    $primary,
+  secondary:  $secondary,
+  tertiary:   $tertiary,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  favorite:   #69BB7B,
+  facebook:   #3b5998,
+  twitter:    #00aced,
+);
